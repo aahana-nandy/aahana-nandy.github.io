@@ -57,6 +57,7 @@ h2.nothome {
     text-align: center;
     font-size: 40px;
     color:#B5E8A4;
+    margin: bottom 0%;;
 }
 div{
     color: #FFFF;
@@ -90,9 +91,8 @@ div{
 }
 .goalsheader {
     color: #B5E8A4;
+    margin-bottom: 0%;
 }
-        
-/* This is the new rule for the project buttons */
 .project-button {
     background-color: #B5E8A4;
     color: #FF97C4;
