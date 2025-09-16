@@ -1,0 +1,225 @@
+html {
+    font-family:"dynapuff-variable", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+body {
+    background-color:#FF97C4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+header {
+    font-size: 50px;
+    color: #FFFF;
+    text-align: center;
+    padding: 32px 16px;
+    width:100%;
+}  
+header h1 {
+    margin-bottom: 10px;
+} 
+h2 {
+    font-size: 38px; 
+    font-weight: 400; 
+    font-style: normal; 
+    color: #B5E8A4;
+    margin-top:0%;
+} 
+nav {
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+}
+nav a {
+    color: #B5E8A4; 
+    font-size: 1.8rem;
+    margin-left: 15px;
+}   
+.nothome { 
+    margin-top:0%;
+    margin-bottom: 10px;
+}
+h1.nothome {
+    font-size: 30px;
+    margin-bottom: 5px;
+    text-align: left; 
+}
+h2.nothome {
+    font-size: 24px;
+    margin-top: 5px;
+    text-align: left;
+}
+.aboutmeheader {
+    text-align: center;
+    font-size: 40px;
+    color:#B5E8A4;
+}
+div{
+    color: #FFFF;
+}
+.content-container {
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify; 
+    font-size: 20px;
+}
+.linkedin-button {
+    background-color: #B5E8A4;
+    color: #FF97C4;
+    padding: 15px 30px; 
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+.linkedin-button:hover {
+    background-color: #FF70A6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+.button-container {
+    text-align: center;
+}
+.goalsheader {
+    color: #B5E8A4;
+}
+        
+/* This is the new rule for the project buttons */
+.project-button {
+    background-color: #B5E8A4;
+    color: #FF97C4;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    text-align: center;
+    width: fit-content;
+}
+.project-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+.project-button:hover {
+    background-color: #FF70A6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+        
+/* New specific rule for My Projects h2 */
+section h2 {
+    color: #B5E8A4;
+    padding-left: 20px;
+}
+        
+/* General project list styling */
+h3 {
+    color: #FFFF;
+    font-size: 28px;
+    margin-top: 40px;
+    padding-left: 20px;
+}
+li {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+li p {
+    font-size: 22px; 
+    max-width: 55%; 
+    line-height: 1.6;
+}
+li p strong {
+    color: #B5E8A4;
+    font-size: 26px; 
+    display: block; 
+    margin-bottom: 10px;
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+        
+/* Single Image Styling */
+li > img {
+    max-width: 30%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+        
+/* Multi-Image Gallery Styling */
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+}
+.image-row {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.image-row img {
+    width: calc(33.333% - 10px);
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+        
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; 
+    margin: 20px auto;
+}
+.about-photo {
+    width: 100%;
+    max-width: 450px;
+    height: 350px; 
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+        
+@media (max-width: 768px) {
+    li {
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+    li > img,
+    .image-gallery {
+        max-width: 100%;
+    }
+    .image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-photo {
+        width: 80%;
+    }
+}
+.letsconnectsection {
+    font-size: 40px;
+    text-align: center;
+}
+.connectinfo {
+    color: #B5E8A4;
+}
