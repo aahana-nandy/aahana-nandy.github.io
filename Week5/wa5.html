@@ -9,17 +9,36 @@
 <body>
     <nav class="main-nav">
     <div class="nav-brand">Community Hub</div>
-    <button class="nav-toggle" aria-label="Toggle navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
+    <button class="nav-toggle" aria-label="Toggle navigation menu"> 
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
     </button>
-    <ul class="nav-menu">
+    <ul class="nav-menu hide"> 
         <li><a href="#home">Home</a></li>
         <li><a href="#resources">Resources</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
+
+<script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    function showMenu() {
+       var shown = navMenu.classList.toggle("show");
+        navMenu.classList.toggle("hide");
+        if (shown) {
+    // This code runs when the menu is opened.
+    navToggle.classList.add("menu-open");
+} else {
+    // This code runs when the menu is closed.
+    navToggle.classList.remove("menu-open");
+}
+    }
+    navToggle.addEventListener('click',showMenu);
+    /* it worked!!
+</script>
 </body>
 </html>
