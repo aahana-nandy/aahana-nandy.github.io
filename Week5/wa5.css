@@ -83,7 +83,7 @@
         width: 200px;
     }
     .nav-menu li {
-        width: 80%;
+        width: 100%;
         text-align: center;
         margin: 0;
         padding: 15px;
@@ -92,6 +92,6 @@
         display: none;
     }
     .nav-toggle.menu-open {
-        background-color: lightblue; 
+        transform: rotate(90deg);
     }
 }

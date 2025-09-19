@@ -29,16 +29,22 @@
     function showMenu() {
        var shown = navMenu.classList.toggle("show");
         navMenu.classList.toggle("hide");
+
+        navToggle.setAttribute('aria-expanded', shown);
+
         if (shown) {
-    // This code runs when the menu is opened.
-    navToggle.classList.add("menu-open");
-} else {
-    // This code runs when the menu is closed.
-    navToggle.classList.remove("menu-open");
-}
+            console.log("The menu is now open!");
+            navToggle.classList.add("menu-open");
+            // You can add more code here to change the button's appearance.
+        } else {
+            console.log("The menu is now closed.");
+            navToggle.classList.remove("menu-open");
+            // You can add more code here to reset the button's appearance.
+        }
     }
-    navToggle.addEventListener('click',showMenu);
-    /* it worked!!
+    navToggle.addEventListener('click', showMenu);
+
+</script>  
 </script>
 </body>
 </html>
