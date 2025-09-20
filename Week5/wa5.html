@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earth&Nature</title>
     <link rel="stylesheet" href="wa5.css">
+    <link rel="stylesheet" href="https://use.typekit.net/phx4xzc.css">
 </head>
 <body>
     <nav class="main-nav">
-    <div class="nav-brand">Community Hub</div>
+    <div class="nav-brand">Earth & Canvas Club</div>
     <button class="nav-toggle" aria-label="Toggle navigation menu"> 
         <span class="hamburger"></span>
         <span class="hamburger"></span>
@@ -16,9 +17,9 @@
     </button>
     <ul class="nav-menu hide"> 
         <li><a href="#home">Home</a></li>
-        <li><a href="#resources">Resources</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#AboutUs">About Us</a></li>
+        <li><a href="#Events">Events</a></li>
+        <li><a href="#Contact">Contact</a></li>
     </ul>
 </nav>
 
@@ -35,14 +36,24 @@
         if (shown) {
             console.log("The menu is now open!");
             navToggle.classList.add("menu-open");
-            // You can add more code here to change the button's appearance.
+            
+            const firstLink = navMenu.querySelector('li a');
+            firstLink.focus();
         } else {
             console.log("The menu is now closed.");
             navToggle.classList.remove("menu-open");
-            // You can add more code here to reset the button's appearance.
+            
+            navToggle.focus();
         }
     }
     navToggle.addEventListener('click', showMenu);
+    navToggle.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault(); // Prevents the default action (scrolling)? 
+            showMenu();
+        }
+        /* now menu opens and closes just with keyboard!*/
+    });
 
 </script>  
 </script>

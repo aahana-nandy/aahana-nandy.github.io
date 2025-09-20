@@ -1,8 +1,15 @@
+html {
+    font-family: "sour-gummy", sans-serif;
+    font-weight: 500;
+    font-style:normal;
+    font-size: large;
+}
 .main-nav {
     display: flex;
     justify-content:space-between;
-    background-color: lightgreen;
-    border: 2px solid black;
+    background-color: #C3EB78;
+    border: 2px solid #1C5253;
+    color: #1C5253;
     align-items: center;
     position: relative;
 
@@ -25,20 +32,21 @@
 
 .nav-menu li {
     list-style: none;
-    border: 2px solid black;
     padding: 10px; 
     margin: 5px;
     text-align: center;
+    color: #1C5253;
 
     flex: 1;
 }
 
 .nav-menu li a {
     transition-duration: 0.2s;
+    color: #1C5253;
 }
 
 .nav-menu li a:hover {
-    color: red;
+    color: #B6174B;
     transition-duration: 0.2s;
 
 }
@@ -48,24 +56,29 @@
         transition-duration: 0.5s;
         display: flex;
         flex-direction:column;
-        justify-content: space-between;
-        align-items: center;
+        justify-content:center;
+        align-items:center;
+        gap: 3px;
         width: 30px;
         height: 25px;
-        background-color: pink;
+        background-color: #C3EB78;
+        border-radius: 4px;
+        
+        
     }
     .hamburger {
         display: block;
-        width: 100%;
+        width: 20px;
         height: 3px;
-        background-color: purple;
+        background-color: #B6174B;
         transition-duration: 0.5s;
+        border-radius: 4px;
     }
     .nav-menu {
         display:none;
         flex-direction: column;
         position: absolute;
-        background-color: pink;
+        background-color: #C3EB78;
         height: 8px;
         width: 6px;
         border-radius: 20px;
@@ -86,12 +99,29 @@
         width: 100%;
         text-align: center;
         margin: 0;
-        padding: 15px;
+        padding: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
     }
+    .nav-menu li a {
+        display: block;
+        padding: 15px; 
+        text-align: center;
+        color: #1C5253; 
+        text-decoration: none; 
+        transition-duration: 0.2s;
+    }
+    
     .nav-menu.hide {
         display: none;
     }
     .nav-toggle.menu-open {
         transform: rotate(90deg);
     }
+    .nav-menu li a:focus {
+    color: #B6174B ;            
+    text-decoration: none;   
+    outline: none;            
+    border-radius: 5px;      
+    padding: 10px 15px;      
+}
 }
