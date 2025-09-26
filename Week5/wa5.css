@@ -19,8 +19,9 @@ html {
     display: none;
 }
 
-.nav-brand {
+.nav-brand{
     flex-grow: 1;
+    font-size: 1.6rem;
 }
 
 .nav-menu {
