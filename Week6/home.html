@@ -105,7 +105,7 @@
     const filterButtons = document.querySelectorAll('.filter-button'); //seconf feuature
     const galleryItems = document.querySelectorAll('.gallery-column');
 
-    // High-Contrast Mode
+    // High Contrast Mode
     function toggleContrast() {
         document.body.classList.toggle('high-contrast');
     }
@@ -127,7 +127,7 @@
         }
     }
 
-    // Mobile Menu Listeners for progressive enhancment requirment
+    // Mobile Menu listeners for progressive enhancment requirment
     navToggle.addEventListener('click', showMenu);
     navToggle.addEventListener('keydown', function(event) {
         if (event.key === 'Enter' || event.key === ' ') {
@@ -137,7 +137,7 @@
         /* now menu opens and closes just with keyboard!*/
     });
 
-    // High-Contrast Mode Listener (first feauture)
+    // High Contrast Mode Listener (first feauture)
     addEventListener("keydown", (event) => {
         if (event.key === "c") {
             toggleContrast();
@@ -145,20 +145,23 @@
     });
 
     // Gallery Filter Listener (second feauture)
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filterValue = button.dataset.filter;
+    // This 'if' statement is the fix. It prevents this code from running on the homepage.
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filterValue = button.dataset.filter;
 
-            galleryItems.forEach(item => {
-                const itemCategory = item.dataset.category;
-                if (filterValue === 'all' || filterValue === itemCategory) {
-                    item.classList.remove('is-hidden');
-                } else {
-                    item.classList.add('is-hidden');
-                }
+                galleryItems.forEach(item => {
+                    const itemCategory = item.dataset.category;
+                    if (filterValue === 'all' || filterValue === itemCategory) {
+                        item.classList.remove('is-hidden');
+                    } else {
+                        item.classList.add('is-hidden');
+                    }
+                });
             });
         });
-    });
+    }
 </script>
 </body>
 </html>

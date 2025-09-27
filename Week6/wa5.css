@@ -273,6 +273,12 @@ margin-bottom: 20px;
   margin: 0 5px;
 }
 
+button:focus,
+.filter-button:focus {
+  outline: 3px solid #1C5253;
+  outline-offset: 2px;
+}
+
 .filter-button:hover {
   background-color: #1C5253;
   color: #C3EB78;
@@ -419,4 +425,5 @@ margin-bottom: 20px;
         color: #B6174B;
         font-weight: bold;
 }
+
 }
