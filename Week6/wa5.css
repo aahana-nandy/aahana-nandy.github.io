@@ -363,4 +363,46 @@ margin-bottom: 20px;
     border-radius: 5px;      
     padding: 10px 15px;      
 }
+
+
+    .event-grid, 
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        margin: 0;
+        padding: 0 10px;
+    }
+    
+    .event {
+        margin: 10px 0;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    /* 'X' for the hamburger icon */
+    .nav-toggle.menu-open .hamburger:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .nav-toggle.menu-open .hamburger:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle.menu-open .hamburger:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Reduces main title size on small screens */
+    .nav-brand {
+        font-size: 28px;
+    }
+
+    /* Reduc size of all H2 headers on small screens */
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Centers gallery category headers on mobile */
+    .gallery-column h2 {
+        text-align: center;
+    }
 }
