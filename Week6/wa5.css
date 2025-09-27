@@ -351,13 +351,6 @@ margin-bottom: 20px;
     .nav-toggle.menu-open {
         transform: rotate(90deg);
     }
-    .nav-menu li a:focus {
-        color: #B6174B ;            
-        text-decoration: none;   
-        outline: none;            
-        border-radius: 5px;      
-        padding: 10px 15px;      
-    }
     .event-grid {
         grid-template-columns: 1fr; 
         grid-template-rows: auto auto auto; 
@@ -418,4 +411,12 @@ margin-bottom: 20px;
     .gallery-column img {
         height: auto; 
     }
+    /* --- Active Navigation Link Styling --- */
+    #home-page .nav-menu a[href="home.html"],
+    #gallery-page .nav-menu a[href="gallery.html"],
+    #events-page .nav-menu a[href="events.html"],
+    #contact-page .nav-menu a[href="contact.html"] {
+        color: #B6174B;
+        font-weight: bold;
+}
 }
