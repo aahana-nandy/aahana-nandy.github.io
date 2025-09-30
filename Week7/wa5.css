@@ -1,0 +1,429 @@
+html {
+    font-family: "sour-gummy", sans-serif;
+    font-weight: 500;
+    font-style:normal;
+    font-size: large;
+}
+.main-nav {
+    display: flex;
+    justify-content:space-between;
+    background-color: #C3EB78;
+    border: 2px solid #1C5253;
+    border-radius: 10px;
+    color: #1C5253;
+    align-items: center;
+    position: relative;
+
+    padding: 20px;
+}
+.nav-toggle {
+    display: none;
+}
+
+.nav-brand {
+    flex-grow: 1;
+    font-size: 42px;
+    font-weight: 500;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+
+    flex-grow: 1;
+}
+
+.nav-menu li {
+    list-style: none;
+    padding: 10px; 
+    margin: 5px;
+    text-align: center;
+    color: #1C5253;
+
+    flex: 1;
+}
+
+.nav-menu li a {
+    transition-duration: 0.2s;
+    color: #1C5253;
+}
+
+.nav-menu li a:hover {
+    color: #B6174B;
+    transition-duration: 0.2s;
+
+}
+body {
+    background-color: #B6174B;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+}
+
+
+
+
+/* class example for event page*/
+.event-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "section1 section2 section3";
+
+    margin: 20px;
+}
+
+.event {
+    background-color:#C3EB78 ;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 15px; 
+    border: 2px solid #1C5253; 
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+}
+
+.event h2 {
+    text-align: center;
+}
+
+.event img {
+    width: 100%;
+    height: auto;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; 
+}
+
+.details-list li {
+    margin-bottom: 16px;
+}
+
+.details-list p {
+    margin: 0 0 5px 0;
+}
+
+/* Container for the text and button */
+.gallery-promo {
+    text-align: center;
+    margin: 40px 20px; 
+}
+
+/* The promo text itself */
+.gallery-promo p {
+    font-size: 1.2rem;
+    color: #B6174B; 
+    margin-bottom: 20px; 
+}
+
+/* The new gallery button */
+.button {
+    display: inline-block;
+    background-color: #C3EB78; 
+    color: #1C5253; 
+    padding: 12px 25px;
+    border: 2px solid #1C5253;
+    border-radius: 15px; 
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* The button's hover effect */
+.button:hover {
+    background-color: #1C5253;
+    color: #C3EB78;
+}
+
+.event-list {
+    
+margin-bottom: 20px;
+}
+
+.event-item {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(28, 82, 83, 0.3); 
+}
+
+/* Removes the line from the very last event */
+.event-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.event-item h3 {
+    font-size: 1.1rem;
+    color: #1C5253; 
+    margin: 0 0 8px 0;
+}
+
+.event-item p {
+    margin: 0 0 5px 0;
+}
+
+.more-events-note {
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 20px 0;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.section1 {
+    grid-area: section1;
+}
+.section2 {
+    grid-area: section2;
+}
+.section3 {
+    grid-area: section3;
+    padding: 16px 8px;
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    
+}
+
+.section3 .button {
+    display: block;
+    width: max-content;
+    margin: 0 auto; 
+}
+
+
+
+/* --- Gallery Page Styles --- */
+.gallery-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #F5F5F5;
+    text-align: center;
+}
+.gallery-intro {
+    font-size: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 30px;
+    padding: 20px;
+}
+
+.gallery-column {
+    background-color: #C3EB78;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #1C5253;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery-column h2 {
+    text-align: left;
+    margin-top: 0;
+    color: #1C5253;
+    grid-column: 1 / -1; 
+}
+
+.gallery-column img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #1C5253;
+    transition: transform 0.3s ease;
+}
+
+.gallery-column img:hover {
+    transform: scale(1.5);
+}
+
+/* --- High-Contrast Mode --- */
+.high-contrast, .high-contrast * {
+    background-color: #000000 !important; /* the !important is overriding the other style i chose */
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+/* --- Gallery Filter Feature --- */
+.filter-controls {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-button {
+  background-color: #C3EB78;
+  color: #1C5253;
+  border: 2px solid #1C5253;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  margin: 0 5px;
+}
+
+button:focus,
+.filter-button:focus {
+  outline: 3px solid #1C5253;
+  outline-offset: 2px;
+}
+
+.filter-button:hover {
+  background-color: #1C5253;
+  color: #C3EB78;
+}
+
+.is-hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        transition-duration: 0.5s;
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        gap: 3px;
+        width: 30px;
+        height: 25px;
+        background-color: #C3EB78;
+        border-radius: 4px;
+    }
+    .hamburger {
+        display: block;
+        width: 20px;
+        height: 3px;
+        background-color: #B6174B;
+        transition-duration: 0.5s;
+        border-radius: 4px;
+    }
+    .no-js .nav-menu {
+        display: flex;
+        flex-direction: column;
+        position: static; /* part of the normal page flow? */
+        width: 100%;
+        text-align: left;
+    }
+    .nav-menu {
+        display:none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #C3EB78;
+        height: 8px;
+        width: 6px;
+        border-radius: 20px;
+        padding: 0;
+        margin: 3px;
+        text-align: center;
+    }
+    .nav-menu.show {
+        display: flex;
+        position: absolute;
+        top: 90px;
+        right: 0px;
+        height: 200px;
+        width: 200px;
+    }
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+    }
+    .nav-menu li a {
+        display: block;
+        padding: 15px; 
+        text-align: center;
+        color: #1C5253; 
+        text-decoration: none; 
+        transition-duration: 0.2s;
+    }
+    .nav-menu.hide {
+        display: none;
+    }
+    .nav-toggle.menu-open {
+        transform: rotate(90deg);
+    }
+    .event-grid {
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto auto auto; 
+        grid-template-areas:
+            "section1"
+            "section2"
+            "section3";
+        margin: 0;
+        padding: 0 10px;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    /* mobile fixes*/
+    .event {
+        margin: 10px 0;
+    }
+    .nav-menu {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        background-color: #C3EB78;
+        border: 2px solid #1C5253;
+        border-radius: 15px;
+        width: 200px;
+        top: 90px;
+        right: 20px;
+        padding: 10px 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .nav-menu.show {
+        display: flex;
+    }
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+    .nav-toggle.menu-open .hamburger:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .nav-toggle.menu-open .hamburger:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle.menu-open .hamburger:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    .nav-brand {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .gallery-column h2 {
+        text-align: center;
+    }
+    .gallery-column img {
+        height: auto; 
+    }
+    /* --- Active Navigation Link Styling --- */
+    #home-page .nav-menu a[href="home.html"],
+    #gallery-page .nav-menu a[href="gallery.html"],
+    #events-page .nav-menu a[href="events.html"],
+    #contact-page .nav-menu a[href="contact.html"] {
+        color: #B6174B;
+        font-weight: bold;
+}
+
+}
