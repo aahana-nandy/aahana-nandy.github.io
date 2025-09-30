@@ -175,9 +175,13 @@
             });
         });
     }
-    
+    // storing a single string, either 'light' or 'dark', under the key 'userTheme'.
+    //represents the user's last chosen display mode.
     let btn= document.querySelector('#theme').addEventListener('click',theme);
     function theme() {
+        // this data must be read from storage to tell the toggler what the current
+        // theme is, so that it then knows which theme to switch to next. without reading this,
+        // the toggle would only work one way.
         //console.log("theme works");
         setTheme(localStorage.getItem('userTheme'));
 
@@ -196,6 +200,10 @@
         }
 
     // Load saved theme on page load
+     //how users could control this data:
+    // users directly control this data by clicking the theme toggle button, which
+    // will overwrit the stored value. I believe they can also permanently delete it by
+    // clearing their browser's site data for this website
         window.addEventListener('load', function() {
             const savedTheme = localStorage.getItem('userTheme') || 'light';
             document.body.className = savedTheme;
