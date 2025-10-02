@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Earth & Canvas Club</title>
+    <link rel="stylesheet" href="wa5.css">
+    <link rel="stylesheet" href="https://use.typekit.net/phx4xzc.css">
+</head>
+<body id="events-page">
+    <nav class="main-nav">
+        <div class="nav-brand">Earth & Canvas Club</div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu"> 
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu hide"> 
+            <li><a href="home.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        </main>
+
+<script>
+    document.documentElement.classList.remove('no-js'); // For the progressive enhancement requirnemnt
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const filterButtons = document.querySelectorAll('.filter-button'); //seconf feuature
+    const galleryItems = document.querySelectorAll('.gallery-column');
+
+    // High-Contrast Mode
+    function toggleContrast() {
+        document.body.classList.toggle('high-contrast');
+    }
+
+    // Mobile Menu Mode
+    function showMenu() {
+       var shown = navMenu.classList.toggle("show");
+        navMenu.classList.toggle("hide");
+
+        navToggle.setAttribute('aria-expanded', shown);
+
+        if (shown) {
+            navToggle.classList.add("menu-open");
+            const firstLink = navMenu.querySelector('li a');
+            firstLink.focus();
+        } else {
+            navToggle.classList.remove("menu-open");
+            navToggle.focus();
+        }
+    }
+
+    // Mobile Menu Listeners for progressive enhancment requirment
+    navToggle.addEventListener('click', showMenu);
+    navToggle.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            showMenu();
+        }
+        /* now menu opens and closes just with keyboard!*/
+    });
+
+    // High-Contrast Mode Listener (first feauture)
+    addEventListener("keydown", (event) => {
+        if (event.key === "c") {
+            toggleContrast();
+        }
+    });
+
+    // Gallery Filter Listener (second feauture)
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filterValue = button.dataset.filter;
+
+            galleryItems.forEach(item => {
+                const itemCategory = item.dataset.category;
+                if (filterValue === 'all' || filterValue === itemCategory) {
+                    item.classList.remove('is-hidden');
+                } else {
+                    item.classList.add('is-hidden');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

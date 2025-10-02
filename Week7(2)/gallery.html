@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Earth & Canvas Club</title>
+    <link rel="stylesheet" href="wa5.css">
+    <link rel="stylesheet" href="https://use.typekit.net/phx4xzc.css">
+</head>
+<body id="gallery-page">
+    <nav class="main-nav">
+        <div class="nav-brand">Earth & Canvas Club</div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu"> 
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu hide"> 
+            <li><a href="home.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="gallery-container">
+            <h1>Our Gallery</h1>
+            <p class="gallery-intro">A collection of beautiful work created by Earth & Canvas members during our outdoor events.</p>
+            <p class="gallery-intro"> 
+            As well as some past event locations!</p>
+        </div>
+            <div class="filter-controls">
+            <button class="filter-button" data-filter="all">Show All</button>
+            <button class="filter-button" data-filter="drawings">Drawings</button>
+            <button class="filter-button" data-filter="paintings">Paintings</button>
+            <button class="filter-button" data-filter="nature">Nature</button>
+        </div>
+
+        <div class="gallery-grid">
+            <section class="gallery-column" data-category="drawings">
+                <h2>Drawings</h2>
+                <img src="images/Drawing1.jpg" alt="Drawing1">
+                <img src="images/Drawing2.jpg" alt="Drawing2">
+                <img src="images/Drawing3.jpg" alt="Drawing3">
+                <img src="images/Drawing4.jpg" alt="Drawing4">
+                <img src="images/Drawing5.jpg" alt="Drawing5">
+                <img src="images/Drawing6.jpg" alt="Drawing6">
+            </section>
+
+            <section class="gallery-column" data-category="paintings">
+                <h2>Paintings</h2>
+                <img src="images/Painting1.JPG" alt="painting">
+                <img src="images/Painting2.JPG" alt="painting">
+                <img src="images/Painting1.JPG" alt="painting">
+                <img src="images/Painting2.JPG" alt="painting">
+                <img src="images/Painting1.JPG" alt="painting">
+                <img src="images/Painting2.JPG" alt="painting">
+            </section>
+
+            <section class="gallery-column" data-category="nature">
+                <h2>Nature Hotspots!</h2>
+                <img src="images/location1.jpg" alt="Nature">
+                <img src="images/location2.jpg" alt="Nature">
+                <img src="images/location3.JPG" alt="Nature">
+                <img src="images/location4.jpg" alt="Nature">
+                <img src="images/location5.JPG" alt="Nature">
+                <img src="images/location6.JPG" alt="Nature">
+            </section>
+        </div>
+    </main>
+
+<script>
+    document.documentElement.classList.remove('no-js'); // For the progressive enhancement requirnemnt
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const filterButtons = document.querySelectorAll('.filter-button'); //seconf feuature
+    const galleryItems = document.querySelectorAll('.gallery-column');
+
+    // High-Contrast Mode
+    function toggleContrast() {
+        document.body.classList.toggle('high-contrast');
+    }
+
+    // Mobile Menu Mode
+    function showMenu() {
+       var shown = navMenu.classList.toggle("show");
+        navMenu.classList.toggle("hide");
+
+        navToggle.setAttribute('aria-expanded', shown);
+
+        if (shown) {
+            navToggle.classList.add("menu-open");
+            const firstLink = navMenu.querySelector('li a');
+            firstLink.focus();
+        } else {
+            navToggle.classList.remove("menu-open");
+            navToggle.focus();
+        }
+    }
+
+    // Mobile Menu Listeners for progressive enhancment requirment
+    navToggle.addEventListener('click', showMenu);
+    navToggle.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            showMenu();
+        }
+        /* now menu opens and closes just with keyboard!*/
+    });
+
+    // High-Contrast Mode Listener (first feauture)
+    addEventListener("keydown", (event) => {
+        if (event.key === "c") {
+            toggleContrast();
+        }
+    });
+
+    // Gallery Filter Listener (second feauture)
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filterValue = button.dataset.filter;
+
+            galleryItems.forEach(item => {
+                const itemCategory = item.dataset.category;
+                if (filterValue === 'all' || filterValue === itemCategory) {
+                    item.classList.remove('is-hidden');
+                } else {
+                    item.classList.add('is-hidden');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
