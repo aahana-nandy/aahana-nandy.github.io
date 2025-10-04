@@ -25,68 +25,18 @@
 
     <main>
         </main>
-
-<script>
-    document.documentElement.classList.remove('no-js'); // For the progressive enhancement requirnemnt
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const filterButtons = document.querySelectorAll('.filter-button'); //seconf feuature
-    const galleryItems = document.querySelectorAll('.gallery-column');
-
-    // High-Contrast Mode
-    function toggleContrast() {
-        document.body.classList.toggle('high-contrast');
-    }
-
-    // Mobile Menu Mode
-    function showMenu() {
-       var shown = navMenu.classList.toggle("show");
-        navMenu.classList.toggle("hide");
-
-        navToggle.setAttribute('aria-expanded', shown);
-
-        if (shown) {
-            navToggle.classList.add("menu-open");
-            const firstLink = navMenu.querySelector('li a');
-            firstLink.focus();
-        } else {
-            navToggle.classList.remove("menu-open");
-            navToggle.focus();
-        }
-    }
-
-    // Mobile Menu Listeners for progressive enhancment requirment
-    navToggle.addEventListener('click', showMenu);
-    navToggle.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            showMenu();
-        }
-        /* now menu opens and closes just with keyboard!*/
-    });
-
-    // High-Contrast Mode Listener (first feauture)
-    addEventListener("keydown", (event) => {
-        if (event.key === "c") {
-            toggleContrast();
-        }
-    });
-
-    // Gallery Filter Listener (second feauture)
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filterValue = button.dataset.filter;
-
-            galleryItems.forEach(item => {
-                const itemCategory = item.dataset.category;
-                if (filterValue === 'all' || filterValue === itemCategory) {
-                    item.classList.remove('is-hidden');
-                } else {
-                    item.classList.add('is-hidden');
-                }
-            });
-        });
-    });
-</script>
+<footer class="main-footer">
+    <div class="text-sizes">
+        <h2>Text size:</h2>
+        <button id="small-text">Small</button>
+        <button id="med-text">Medium</button>
+        <button id="large-text">Large</button>
+        <button id="clear-preferences">Clear Preferences</button>
+    </div>
+    <div style="text-align: center; padding: 10px; font-size: 0.8rem;">
+        <p>This site uses Adobe Fonts for typography. <a href="privacy.html">Learn more in our Privacy Statement</a>.</p>
+    </div>
+</footer>
+ <script src="myfile.js"></script>
 </body>
 </html>

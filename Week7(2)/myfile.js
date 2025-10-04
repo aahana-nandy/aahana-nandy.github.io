@@ -38,26 +38,42 @@
         let temp_size = size * 16;
 
         document.querySelector('html').style.fontSize = String(temp_size) +"px";
-        localStorage.setItem("fontSize",temp_size);
-        console.log("rantextchange")
+        const item = {
+            value: temp_size,
+            //expiry: new Date().getTime() + 5000, // 5 seconds (testing code to see if it works)
+            expiry: new Date().getTime() + (30 * 24 * 60 * 60 * 1000), // 30 days in milliseconds
+        };
+    // Save that object in localStorage.  rename the key 
+        localStorage.setItem("fontSizePref", JSON.stringify(item));
+        console.log("Font size preference saved with expiration.");
 
     }
 
     
     function set_text_size() {
-        console.log("set");
-        if(localStorage.getItem("fontSize") != null) {
-            let temp_size = localStorage.getItem("fontSize");
-            document.querySelector("html").style.fontSize = String(temp_size) +"px";
+         const itemStr = localStorage.getItem("fontSizePref");
+        if (!itemStr) {
+            return; // Exit if nothing is stored.
+        }
+        const item = JSON.parse(itemStr);
+        const now = new Date().getTime();
+        // check if the current time is past the stored expiration date.
+        if (now > item.expiry) {
+            // if expired, remove it from storage and do nothing.
+            localStorage.removeItem("fontSizePref");
+            console.log("Font size preference expired and removed.");
+        } else {
+            // ifnot expired, apply the font size.
+            document.querySelector("html").style.fontSize = String(item.value) + "px";
         }
 
 
     }
-    function clear_local_storage(size) {
-        let temp_size = size * 16;
-
-        localStorage.clear();
-        document.querySelector('html').style.fontSize = String(temp_size) +"px";
+    function clear_local_storage() {
+        // remove the specific item instead of clearing everything?
+        localStorage.removeItem("fontSizePref"); 
+        document.querySelector('html').style.fontSize = "16px"; // reset tothe default size.
+        console.log("Font size preferences cleared by user.");
     }
 
     // Mobile Menu listeners for progressive enhancment requirment
@@ -96,12 +112,12 @@
         });
     
    
-
+    }
     window.addEventListener('load',set_text_size);
 
     small_txt.addEventListener('click', () => {change_text_size(0.8)});
     med_txt.addEventListener('click', () => {change_text_size(1)});
     large_txt.addEventListener('click', () => {change_text_size(1.5)});
-    clear_txt_pref.addEventListener('click', () => {clear_local_storage(1)});
+    clear_txt_pref.addEventListener('click', () => {clear_local_storage()});
 
-    }
+    
