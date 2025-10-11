@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Earth & Canvas Club</title>
+    <link rel="stylesheet" href="wa5.css">
+    <link rel="stylesheet" href="https://use.typekit.net/phx4xzc.css">
+</head>
+<body id="events-page">
+    <nav class="main-nav">
+        <div class="nav-brand">Earth & Canvas Club</div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu"> 
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu hide"> 
+            <li><a href="home.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="events-container">
+            <h1>Club Events & Registration</h1>
+            <p class="events-intro">Join us for our next adventure! Find the details for our upcoming events below, and use the form to reserve yourself a spot!</p>
+
+            <section class="upcoming-events-list">
+                <h2>Upcoming Events</h2>
+                <div class="event-card">
+                    <h3>Autumn Colors at Mount Sanitas</h3>
+                    <p><strong>Date:</strong> Saturday, October 18, 2025</p>
+                    <p><strong>Time:</strong> 10:00 AM - 1:00 PM</p>
+                </div>
+                <div class="event-card">
+                    <h3>Rock Formations in Eldorado Canyon</h3>
+                    <p><strong>Date:</strong> Saturday, October 25, 2025</p>
+                    <p><strong>Time:</strong> 10:00 AM - 1:00 PM</p>
+                </div>
+                <div class="event-card">
+                    <h3>Lakeside Views at Gross Reservoir</h3>
+                    <p><strong>Date:</strong> Saturday, November 1, 2025</p>
+                    <p><strong>Time:</strong> 11:00 AM - 2:00 PM</p>
+                </div>
+            </section>
+
+            <section class="event-calendar">
+                <h2>Event Calendar:</h2>
+                <div class="calendar">
+                    <h3>October 2025</h3>
+                    <table> <!-- create a table to be the calendar! "td" is the table data-->
+                        <thead>
+                            <tr>
+                                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="inactive">28</td><td class="inactive">29</td><td class="inactive">30</td><td>1</td><td>2</td><td>3</td><td>4</td>
+                            </tr>
+                            <tr>
+                                <td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td class="past-event">11</td>
+                            </tr>
+                            <tr>
+                                <td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td class="event-day">18</td>
+                            </tr>
+                            <tr>
+                                <td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td class="event-day">25</td>
+                            </tr>
+                            <tr>
+                                <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="inactive">1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="calendar">
+                    <h3>November 2025</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="inactive">26</td><td class="inactive">27</td><td class="inactive">28</td><td class="inactive">29</td><td class="inactive">30</td><td class="inactive">31</td><td class="event-day">1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+                            </tr>
+                            <tr>
+                                <td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+                            </tr>
+                            <tr>
+                                <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+                            </tr>
+                            <tr>
+                                <td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+                            </tr>
+                            <tr>
+                                <td>30</td><td class="inactive">1</td><td class="inactive">2</td><td class="inactive">3</td><td class="inactive">4</td><td class="inactive">5</td><td class="inactive">6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="registration-form">
+                <h2>Register for an Event!</h2>
+                <form class="contact-form" action="#" method="POST"> <!-- this sends the form data to the server by storing it in an HTTP request body?-->
+                    <!-- create thge form with the different inputs
+                     create 4 rows and create 4 options for a event slection (do the events upcoming)-->
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-select">Which event are you registering for?</label>
+                        <select id="event-select" name="event_selection" required>
+                            <option value="">--Please choose an event--</option>
+                            <option value="oct18">Oct 18 - Mount Sanitas</option>
+                            <option value="oct25">Oct 25 - Eldorado Canyon</option>
+                            <option value="nov1">Nov 1 - Gross Reservoir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Questions or Comments? (Optional)</label>
+                        <textarea id="comments" name="comments" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="button">Register</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="text-sizes">
+            <h2>Text size:</h2>
+            <button id="small-text">Small</button>
+            <button id="med-text">Medium</button>
+            <button id="large-text">Large</button>
+            <button id="clear-preferences">Clear Preferences</button>
+        </div>
+        <div style="text-align: center; padding: 10px; font-size: 0.8rem;">
+            <p>This site uses Adobe Fonts for typography. <a href="privacy.html">Learn more in our Privacy Statement</a>.</p>
+        </div>
+    </footer>
+
+ <script src="myfile.js"></script>
+</body>
+</html>

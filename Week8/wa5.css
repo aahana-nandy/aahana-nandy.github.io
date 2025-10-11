@@ -334,6 +334,185 @@ button:focus,
     font-size: 24px;
 }
 
+/* --- Events Page Styles --- */
+
+.events-intro {
+    font-size: 1.2rem;
+    text-align: center;
+}
+.events-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #C3EB78;
+    border: 2px solid #1C5253;
+    border-radius: 15px;
+    color: #1C5253;
+}
+
+.events-container h1,
+.events-container h2 {
+    text-align: center;
+    color: #B6174B;
+}
+
+/* adding some space between the main sections*/
+.upcoming-events-list,
+.event-calendar,
+.registration-form {
+    margin-top: 40px;
+}
+
+/* styles for the cards for each individual event in the list. */
+.event-card {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #1C5253;
+    margin-bottom: 15px;
+}
+
+.event-calendar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* box styles that the calendars sit ins. */
+.calendar {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #1C5253;
+    flex: 1;
+    min-width: 280px;
+}
+
+.calendar h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.calendar table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.calendar th, .calendar td {
+    padding: 8px;
+}
+
+.calendar .event-day {
+    background-color: #1C5253;
+    color: #C3EB78;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* styles for the days that have already passed. */
+.calendar .past-event {
+    background-color: #dddddd;
+    border-radius: 50%;
+}
+
+/* fades out the numbers for days not in the current month. */
+.calendar .inactive {
+    color: #aaaaaa;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* styles for all the input boxes and the dropdown menu. */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #1C5253;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: white;
+}
+.contact-form .button {
+    align-self: flex-start;
+}
+
+/* --- Contact Page Styles (Two-Column Layout) --- */
+
+.contact-intro {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+.contact-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.contact-header h1 {
+    color: #B6174B;
+}
+
+/* flex container for the columns */
+.contact-body {
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.contact-column {
+    background-color: #C3EB78;
+    border: 2px solid #1C5253;
+    border-radius: 15px;
+    padding: 25px;
+    color: #1C5253;
+    flex: 1; 
+    max-width: 500px;
+}
+
+.contact-column h2 {
+    text-align: center;
+    color: #B6174B;
+    margin-top: 0;
+}
+
+.contact-column .details-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-column .details-list li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(28, 82, 83, 0.2);
+}
+
+.contact-column .details-list li:last-child {
+    border-bottom: none;
+}
+
 @media (max-width: 600px) {
     .nav-toggle {
         transition-duration: 0.5s;
@@ -470,20 +649,36 @@ button:focus,
     #contact-page .nav-menu a[href="contact.html"] {
         color: #B6174B;
         font-weight: bold;
-}
-.text-sizes {
-        width: 90%; /* Let the container use more of the screen */
-        flex-direction: column; /* Stack the items vertically */
-        align-items: center; 
-        padding: 16px;
+    }
+    .text-sizes {
+            width: 90%; /* Let the container use more of the screen */
+            flex-direction: column; /* Stack the items vertically */
+            align-items: center; 
+            padding: 16px;
+        }
+
+        .main-footer h2, .main-footer button {
+            flex: none; 
+            width: 100%; 
+            margin-bottom: 10px; 
+        }
+    
+    /*  makes the main container on the events page now simple for mobile view too */
+    .events-container {
+        margin: 20px 0;
+        padding: 15px;
     }
 
-    .main-footer h2, .main-footer button {
-        flex: none; 
-        width: 100%; 
-        margin-bottom: 10px; 
+    /* removing the side by side layout for the calendars on smaller screens. */
+    .event-calendar {
+        flex-direction: column;
     }
 
+    .contact-body {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+    }
 }
 /* --- Tablet Styles --- */
 @media (min-width: 601px) and (max-width: 900px) {
