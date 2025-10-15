@@ -3,69 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Persuasive Button</title>
+    <title>Document</title>
     <style>
+        /*.box {
+            height: 200px;
+            width: 200px;
+            border: 5px black solid;
+            background-color: red;
+            animation-name: moving-box;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-out;
+            position: relative;
+        }*/
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 1000px;
-            background-color: #f0f4f8;
-            font-family: sans-serif;
+        .another-box {
+            height: 200px;
+            width: 200px;
+            border: 5px black solid;
+            background-color: blue;
+            transition-property: width;
+            transition-duration: 2s;
+            
         }
 
-        .button {
-            padding: 15px 30px;
-            font-size: 18px;
-            color: white;
-            background-color: #007bff; 
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        
-            transition: all 0.3s ease-in-out; 
-        
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* maybe */
+        .another-box:hover {
+            width: 500px;
+            height: 500px;
         }
 
-        .button:hover {
-            animation-name: encourage-the-click;
-            animation-duration: 0.5s; 
-            animation-timing-function: ease-in-out;
-            animation-fill-mode: forwards; /* I believe this keeps the state of the last keyframe */
-        }
-
-        @keyframes encourage-the-click {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                background-color: #007bff;
+        @keyframes moving-box {
+            from {
+                left: 0px;
+                top: 0px;
+                background-color: red;
             }
+
+            25% {
+                left: 500px;
+                top: 0px; 
+                background-color: blue;
+            }
+
             50% {
-                transform: scale(2);
-                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+                left: 500px;
+                top: 500px;
+                background-color: yellow;
             }
-            100% {
-                transform: scale(1.5);
-                background-color: #0056b3;
-                box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+
+            75% {
+                left: 0px;
+                top: 500px;
+                background-color: green;
+            }
+
+            to {
+                left: 0px;
+                top: 0px;
+                background-color: red;
             }
         }
 
-        /* for users who prefer less motion */
-        @media (prefers-reduced-motion: reduce) {
-            .button:hover {
-                animation: none; 
-                transform: scale(1.05); 
-                background-color: #0056b3;
-            }
-        }
+
     </style>
 </head>
 <body>
-    <button class="button">
-    </button>
+    <div class="box">
+    </div>
 
+
+    <div class="another-box">
+    </div>
+
+    <script>
+
+    </script>
 </body>
 </html>
+
