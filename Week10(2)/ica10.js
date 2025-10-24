@@ -2,19 +2,14 @@ let currentQuoteData = {
     quote: "",
     author: "",
 }
-
-// Select the button and attach the listener (matching your original style)
 document.getElementById('new-quote').addEventListener('click', getNewQuote); 
 
-// The loader functions were an extension, but we'll keep them simple
 function showLoadingSpinner() {
-    // Select the elements inside the function
     document.getElementById('loader').style.display = 'block';
     document.getElementById('quote-container').style.display = 'none';
 }
 
 function hideLoadingSpinner() {
-    // Select the elements inside the function
     document.getElementById('loader').style.display = 'none';
     document.getElementById('quote-container').style.display = 'block';
 }
@@ -41,8 +36,7 @@ async function getNewQuote() {
     } 
     catch (err) {
         console.log(err);
-        
-        // Select the elements inside the function (matching your original style)
+    
         document.getElementById('quote').textContent = 'Failed to get new quote';
         document.getElementById('author').textContent = 'API Error';
     } finally {
@@ -51,7 +45,6 @@ async function getNewQuote() {
 }
 
 function displayQuote(){ 
-    // Select the elements inside the function (matching your original style)
     const quoteText = document.getElementById('quote');
     const authorText = document.getElementById('author');
 
