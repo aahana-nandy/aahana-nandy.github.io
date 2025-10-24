@@ -16,7 +16,7 @@ body {
 /* my quote container styless*/
 .quote-container {
     width: 90%;
-    max-width: 600px;
+    max-width: 800px;
     background-color: #BAF7EC;
     border-radius: 10px;
     padding: 20px;
@@ -82,7 +82,7 @@ body {
 /* the explanation paragraphs at the bottom of the page*/
 .explanation-container {
     width: 90%;
-    max-width: 600px;
+    max-width: 800px;
     margin-top: 20px;
     padding: 15px;
     background-color: #BAF7EC;

@@ -1,62 +1,49 @@
-let currentQuoteData = {
-    quote: "",
-    author: "",
+let triviaBtn = document.querySelector("#js-new-quote").addEventListener('click', newTrivia);
+
+let answerBtn= document.querySelector('#js-tweet').addEventListener('click',newAnswer);
+
+let current = {
+    question: "",
+    answer: "",
 }
 
-// Select the button and attach the listener (matching your original style)
-document.getElementById('new-quote').addEventListener('click', getNewQuote); 
+const endpoint = "https://trivia.cyberwisp.com/getrandomchristmasquestion";
 
-// The loader functions were an extension, but we'll keep them simple
-function showLoadingSpinner() {
-    // Select the elements inside the function
-    document.getElementById('loader').style.display = 'block';
-    document.getElementById('quote-container').style.display = 'none';
-}
+async function newTrivia() {
+   // console.log("Success");
 
-function hideLoadingSpinner() {
-    // Select the elements inside the function
-    document.getElementById('loader').style.display = 'none';
-    document.getElementById('quote-container').style.display = 'block';
-}
-
-const endpoint = "https://thequoteshub.com/api/quote"; 
-
-async function getNewQuote() { 
-    showLoadingSpinner();
-
-    try {
-        const response = await fetch(endpoint);
-        
-        if (!response.ok) {
-            throw Error(response.statusText);
+   try {
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+        throw Error(response.statusText);
         }
-        
         const json = await response.json();
-        
-        currentQuoteData.quote = json.text;
-        currentQuoteData.author = json.author;
-        
-        displayQuote();
-        
+        console.log(json);
+        displayTrivia (json["question"]);
+        current.question = json["question"];
+        current.answer = json["answer"];
+        console.log(current.question);
+        console.log(current.answer);
     } 
     catch (err) {
-        console.log(err);
-        
-        // Select the elements inside the function (matching your original style)
-        document.getElementById('quote').textContent = 'Failed to get new quote';
-        document.getElementById('author').textContent = 'API Error';
-    } finally {
-        hideLoadingSpinner();
+        console.log(err)
+        alert('Failed to get new trivia');
     }
 }
 
-function displayQuote(){ 
-    // Select the elements inside the function (matching your original style)
-    const quoteText = document.getElementById('quote');
-    const authorText = document.getElementById('author');
+function displayTrivia(question){
+    const questionText = document.querySelector("#js-quote-text");
+    const answerText = document.querySelector('#js-answer-text');
 
-    quoteText.textContent = currentQuoteData.quote;
-    authorText.textContent = currentQuoteData.author;
+    questionText.textContent = question;
+    answerText.textContent = "";
+
+}
+function newAnswer(){
+    console.log('Success == answer!');
+
+    const answerText = document.querySelector('#js-answer-text');
+    answerText.textContent = current.answer
 }
 
-getNewQuote();
+newTrivia()
