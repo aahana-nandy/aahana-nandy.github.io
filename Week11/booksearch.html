@@ -1,48 +1,39 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WA12 Accessible Book Search Generator</title>
+    <title>Book Search Generator</title>
     
-    <link rel="stylesheet" href="wa12.css"> 
+    <link rel="stylesheet" href="booksearch.css">
 </head>
 <body>
+
+    <div id="loader" class="loader"></div>
     
-    <header> 
-        <!-- FIX: Added <header> landmark -->
-        <h1>Systems Critique: Accessible Book Search</h1>
-    </header>
     
-    <main id="main-content"> 
-        <!-- FIX: Replaced outer div with <main> landmark -->
-        <div id="loader" class="loader"></div>
+    <div id="search-container" class="search-container">
         
-        <form role="search" class="search-container"> 
-            <!-- FIX: Replaced div with <form role="search"> landmark -->
-            
-            <h1 id="title" class="title-text">Book Title will appear here.</h1> 
-             <!-- FIX: Changed original <span> to <h1> for heading structure -->
+        <div id="title-text">
+            <span id="title">Book Title will appear here.</span>
+        </div>
 
-            <h2 id="authorName">Author Name</h2> 
-            <!-- FIX: Changed original <div> to <h2> for heading structure -->
+        <div id="authorName">
+             Author Name
+        </div>
 
-            <div class="input-container">
-                <label for="titleInput">Enter Book Title for Search</label> 
-            <!-- FIX: Added <label> for form control association -->
-                <input 
-                    type="text" 
-                    id="titleInput" 
-                    placeholder="e.g., The Hobbit" 
-                    aria-describedby="search-hint">
-                <small id="search-hint">Search requires an exact title match.</small>
-            </div>
+        <div class="input-container">
+             
+            <input type="text" id="titleInput" placeholder="Enter Book Title (e.g., The Hobbit)">
+        </div>
 
-            <div class="button-container">
-                <button id="searchButton">Search Book</button>
-            </div>
-        </form>
-    </main>
+        <div class="button-container">
+            <button id="searchButton">Search Book</button>
+        </div>
+    </div>
     
-    <script src="wa12.js"></script>
+
+
+    <script src="booksearch.js"></script>
 </body>
 </html>
