@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search Generator</title>
+    
+    <link rel="stylesheet" href="booksearch.css">
+</head>
+<body>
+
+    <h1 class="sr-only">Book Search Generator</h1>
+
+    <main>
+        <div id="loader" class="loader"></div>
+        
+        <div id="search-container" class="search-container">
+            
+            <h2 id="title-text">
+                <span id="title">Book Title will appear here.</span>
+            </h2>
+
+            <div id="authorName">
+                Author Name
+            </div>
+
+            <div class="input-container">
+                
+                <input type="text" id="titleInput" placeholder="Enter Book Title (e.g., The Hobbit)" aria-label="Enter Book Title">
+            </div>
+
+            <div class="button-container">
+                <button id="searchButton">Search Book</button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="wa12.js"></script>
+</body>
+</html>
