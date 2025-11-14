@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library Search</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="wa12.css">
+</head>
+<body>
+
+    <h1 class="sr-only">Library Book Search</h1>
+
+    <header class="page-header">
+        <div class="header-content-wrapper"> 
+            
+            <div class="logo-area">
+                <img src="image.png" alt="Library Logo" class="header-logo">
+                <span class="logo-text">Library BookSearch</span>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#search" class="active">Book Search</a></li>
+                    <li><a href="#my-books">My Books</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </nav>
+            <div id="search-container" class="search-container">
+                <h2 class="search-title">Find Your Next Read!</h2>
+                <div class="input-container">
+                    <input type="text" id="searchInput" placeholder="Search by Title or Author..." aria-label="Search Book Title or Author">
+                    <button id="searchButton">Search</button>
+                </div>
+                <div id="loader" class="loader"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="results-area">
+        <h2 id="results-heading">Search Results</h2>
+        
+        <div id="book-results" class="book-results">
+            <p class="initial-message">Enter a book title or author and click 'Search' to see results!</p>
+        </div>
+        
+    </main>
+    
+    <script src="wa12.js"></script>
+</body>
+</html>
